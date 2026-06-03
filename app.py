@@ -2,12 +2,14 @@ import streamlit as st
 import pandas as pd
 import joblib
 import plotly.express as px
+import numpy as np
+import time
 
 # Load trained model
 
 model = joblib.load("predictive_model.pkl")
 
-# App title
+# Title
 
 st.title("Predictive Maintenance System")
 
@@ -127,3 +129,27 @@ fig = px.bar(
 )
 
 st.plotly_chart(fig)
+```
+
+# Live Monitoring
+
+st.header("Live IoT Monitoring")
+
+if st.button("Start Live Monitoring"):
+
+```
+live_chart = st.line_chart()
+
+for i in range(20):
+
+    simulated_probability = np.random.random()
+
+    live_chart.add_rows(
+        pd.DataFrame({
+            "Failure Probability": [
+                simulated_probability
+            ]
+        })
+    )
+
+    time.sleep(0.5)
