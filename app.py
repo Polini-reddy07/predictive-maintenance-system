@@ -65,9 +65,7 @@ elif machine_type == "M":
 # Prediction
 
 if st.button("Predict Failure"):
-
-```
-sample = pd.DataFrame(
+    sample = pd.DataFrame(
     [[
         air_temp,
         process_temp,
@@ -97,13 +95,10 @@ failure_probability = probability[0][1]
 st.subheader("Prediction Result")
 
 if prediction[0] == 1:
-
     st.error(
         f"High Failure Risk: {failure_probability:.2%}"
     )
-
 else:
-
     st.success(
         f"Machine Healthy: {(1 - failure_probability):.2%}"
     )
@@ -128,19 +123,15 @@ fig = px.bar(
 )
 
 st.plotly_chart(fig)
-```
 
 # Live Monitoring
 
 st.header("Live IoT Monitoring")
 
 if st.button("Start Live Monitoring"):
-
-```
-live_chart = st.line_chart()
+    live_chart = st.line_chart()
 
 for i in range(20):
-
     simulated_probability = np.random.random()
 
     live_chart.add_rows(
@@ -152,4 +143,3 @@ for i in range(20):
     )
 
     time.sleep(0.5)
-```
