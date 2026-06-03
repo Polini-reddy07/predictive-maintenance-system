@@ -62,6 +62,7 @@ type_L = 1
 elif machine_type == "M":
 type_M = 1
 
+
 # Prediction
 
 if st.button("Predict Failure"):
