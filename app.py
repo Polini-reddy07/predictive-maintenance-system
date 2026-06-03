@@ -9,7 +9,7 @@ import time
 
 model = joblib.load("predictive_model.pkl")
 
-# App title
+# Title
 
 st.title("Predictive Maintenance System")
 
@@ -65,7 +65,8 @@ elif machine_type == "M":
 # Prediction
 
 if st.button("Predict Failure"):
-    
+
+```
 sample = pd.DataFrame(
     [[
         air_temp,
@@ -107,8 +108,7 @@ else:
         f"Machine Healthy: {(1 - failure_probability):.2%}"
     )
 
-# Probability chart
-
+# Probability Chart
 prob_df = pd.DataFrame({
     "Status": [
         "Healthy",
@@ -136,6 +136,7 @@ st.header("Live IoT Monitoring")
 
 if st.button("Start Live Monitoring"):
 
+```
 live_chart = st.line_chart()
 
 for i in range(20):
@@ -151,3 +152,4 @@ for i in range(20):
     )
 
     time.sleep(0.5)
+```
